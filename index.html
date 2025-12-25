@@ -135,25 +135,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!--logic JS-->
-  <script>
-    const waktu = new Date();
+  <script src="script.js"></script>
 
-    let greeting = "";
-    const jam = waktu.getHours();
-    const menit = waktu.getMinutes();
-
-    if (jam <= 9) {
-      greeting = "Good morning, embrace the shadows of dawn ";
-    } else if (jam <= 14) {
-      greeting = "The darkness awaits in daylight ";
-    } else if (jam <= 18) {
-      greeting = "Twilight approaches, the abyss calls";
-    } else {
-      greeting = "Welcome to the eternal night";
-    }
-
-    document.getElementById("greeting").innerText = greeting;
-  </script>
 </body>
+
 
 </html>
