@@ -20,6 +20,34 @@
       color: #e0e0e0;
       min-height: 100vh;
     }
+
+    .cart-badge {
+      position: relative;
+      top: -10px;
+      right: 5px;
+      background: #dc3545;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .btn-add-cart {
+      transition: all 0.3s ease;
+    }
+
+    .btn-add-cart:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);
+    }
+
+    .price-tag {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffc107;
+      text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+    }
   </style>
 </head>
 
@@ -38,9 +66,10 @@
 
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto bg-secondary rounded-3 p-2 ">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         </ul>
       </div>
     </div>
@@ -60,66 +89,89 @@
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/hoodie.png" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/hoodie.png" class="card-img-top img-fluid" alt="Abyss Sigil Hoodie">
           <div class="card-body text-center bg-danger">
-            <h3 class="card-title bi bi bi-discord"> Abyss Sigil Hoodie</h3>
-            <p class="card-text justify-content-between">Hoodie dengan simbol terkutuk dan desain yang mencuri perhatian
-              tanpa bersuara.</p>
+            <h3 class="card-title bi bi-discord"> Abyss Sigil Hoodie</h3>
+            <p class="card-text">Hoodie dengan simbol terkutuk dan desain yang mencuri perhatian tanpa bersuara.</p>
+            <p class="price-tag">Rp 350.000</p>
+            <button class="btn btn-dark btn-add-cart w-100"
+              onclick="addToCart('Abyss Sigil Hoodie', 350000, 'img/hoodie.png')">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/hat.jpeg" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/hat.jpeg" class="card-img-top img-fluid" alt="Vampire Hat">
           <div class="card-body text-center bg-danger">
             <h3 class="card-title bi bi-eye-slash"> Vampire Hat</h3>
-            <p class="card-text justify-content-between">Topi vampir klasik dengan aura misterius yang menghantui setiap
-              langkah.</p>
+            <p class="card-text">Topi vampir klasik dengan aura misterius yang menghantui setiap langkah.</p>
+            <p class="price-tag">Rp 150.000</p>
+            <button class="btn btn-dark btn-add-cart w-100" onclick="addToCart('Vampire Hat', 150000, 'img/hat.jpeg')">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/hoodie.jpeg" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/hoodie.jpeg" class="card-img-top img-fluid" alt="Black Covenant Hoodie">
           <div class="card-body text-center bg-danger">
             <h3 class="card-title bi bi-yin-yang"> Black Covenant Hoodie</h3>
-            <p class="card-text justify-content-between">Hoodie hitam dengan detail simbolik untuk mereka yang
-              berperjanjian dengan bayangan.</p>
+            <p class="card-text">Hoodie hitam dengan detail simbolik untuk mereka yang berperjanjian dengan bayangan.
+            </p>
+            <p class="price-tag">Rp 380.000</p>
+            <button class="btn btn-dark btn-add-cart w-100"
+              onclick="addToCart('Black Covenant Hoodie', 380000, 'img/hoodie.jpeg')">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/pita.png" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/pita.png" class="card-img-top img-fluid" alt="Grim Tie">
           <div class="card-body text-center bg-danger">
             <h3 class="card-title bi bi-flower2"> Grim Tie</h3>
-            <p class="card-text justify-content-between">Dasi gothic dengan salib dan rantai. Detail kecil, dampak
-              besar.</p>
+            <p class="card-text">Dasi gothic dengan salib dan rantai. Detail kecil, dampak besar.</p>
+            <p class="price-tag">Rp 120.000</p>
+            <button class="btn btn-dark btn-add-cart w-100" onclick="addToCart('Grim Tie', 120000, 'img/pita.png')">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/drws.png" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/drws.png" class="card-img-top img-fluid" alt="Midnight Dress">
           <div class="card-body text-center bg-danger">
             <h3 class="card-title bi bi-balloon-heart-fill"> Midnight Dress</h3>
-            <p class="card-text justify-content-between">Gaun malam dengan lapisan transparan dan potongan asimetris
-              yang mengalir seperti rahasia.</p>
+            <p class="card-text">Gaun malam dengan lapisan transparan dan potongan asimetris yang mengalir seperti
+              rahasia.</p>
+            <p class="price-tag">Rp 450.000</p>
+            <button class="btn btn-dark btn-add-cart w-100"
+              onclick="addToCart('Midnight Dress', 450000, 'img/drws.png')">
+              <i class="bi bi-cart-plus"></i> Add to Cart
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card shadow h-100">
-          <img src="img/s.png" class="card-img-top img-fluid" alt="Contoh gambar">
+          <img src="img/s.png" class="card-img-top img-fluid" alt="Red Riot">
           <div class="card-body text-center bg-danger">
             <h3 class="card-title bi bi-suit-spade-fill"> Red Riot</h3>
-            <p class="card-text justify-content-between">Dengan aksen merah darah yang menggelegar di tengah hitam pekat
-              dirancang untuk mengontrol ketidakteraturan.</p>
+            <Di class="card-text">Aksen merah darah menggelegar dimaksudkan untuk mengontrol ketidakteraturan.</p>
+              <p class="price-tag">Rp 420.000</p>
+              <button class="btn btn-dark btn-add-cart w-100" onclick="addToCart('Red Riot', 420000, 'img/s.png')">
+                <i class="bi bi-cart-plus"></i> Add to Cart
+              </button>
           </div>
         </div>
       </div>
@@ -128,16 +180,29 @@
 
   <!-- FOOTER -->
   <footer class="bg-dark text-primary text-center py-3">
-    © 2025 KhairyGiovanna
+      © 2025 Muhammad Rasya Al Khairy - NIM: [251011700101] - Kelas: [01SIFP002]
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!--logic JS-->
-  <script src="script.js"></script>
+  <script>
 
+    const waktu = new Date();
+    let greeting = "";
+    const jam = waktu.getHours();
+
+    if (jam <= 9) {
+      greeting = "Good morning, embrace the shadows of dawn";
+    } else if (jam <= 14) {
+      greeting = "The darkness awaits in daylight";
+    } else if (jam <= 18) {
+      greeting = "Twilight approaches, the abyss calls";
+    } else {
+      greeting = "Welcome to the eternal night";
+    }
+    document.getElementById("greeting").innerText = greeting;
+  </script>
 </body>
-
 
 </html>
