@@ -57,6 +57,7 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
         </div>
@@ -112,12 +113,36 @@
 
     <!-- FOOTER -->
     <footer class="bg-dark text-primary text-center py-3">
-        © 2025 KhairyGiovanna
+         © 2025 Muhammad Rasya Al Khairy - NIM: [251011700101] - Kelas: [01SIFP002]
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!--logic JS-->
+    <script>
+        const waktu = new Date();
+
+        let greeting = "";
+        const jam = waktu.getHours();
+        const menit = waktu.getMinutes();
+
+        
+
+        if (jam <= 9) {
+            greeting = "Good morning, embrace the shadows of dawn ";
+        } else if (jam <= 14) {
+            greeting = "The darkness awaits in daylight ";
+        } else if (jam <= 18) {
+            greeting = "Twilight approaches, the abyss calls";
+        } else {
+            greeting = "Welcome to the eternal night";
+        }
+
+        document.getElementById("greeting").innerText = greeting;
+
+
+    </script>
+</body>
 
 </html>
